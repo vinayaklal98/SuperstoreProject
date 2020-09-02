@@ -18,7 +18,7 @@ def signup():
 		msg = request.get_json()
 		return jsonify({"GOT POST":msg}),201
 	else:
-		return jsonify({"error":"Got Error"})
+		return jsonify({"error":"Got Error"}),404
 
 @app.route("/superstore/login", methods=['GET', 'POST'])
 def login():
@@ -28,7 +28,7 @@ def login():
 		if msg['username'] == 'test' and msg['password'] == 'test@123':
 			return jsonify({"GOT POST":"login successful!!"}),200
 	else:
-		return jsonify({"error":"Got Error"})
+		return jsonify({"error":"Got Error"}),404
 
 @app.route("/superstore/category/electronics",methods=['GET', 'POST'])
 def catelec():
@@ -46,7 +46,7 @@ def catelec():
 		msg = request.get_json()
 		return jsonify({"GOT GET":sent}),200
 	else:
-		return jsonify({"error":"Got Error"})
+		return jsonify({"error":"Got Error"}),404
 
 @app.route("/superstore/category/grocery",methods=['GET', 'POST'])
 def catgroc():
@@ -64,7 +64,7 @@ def catgroc():
 		msg = request.get_json()
 		return jsonify({"GOT GET":sent}),200
 	else:
-		return jsonify({"error":"Got Error"})
+		return jsonify({"error":"Got Error"}),404
 
 @app.route("/superstore/category/clothing",methods=['GET', 'POST'])
 def catcloth():
@@ -82,4 +82,4 @@ def catcloth():
 		msg = request.get_json()
 		return jsonify({"GOT GET":sent}),200
 	else:
-		return jsonify({"error":"Got Error"})
+		return jsonify({"error":"Got Error"}),404
