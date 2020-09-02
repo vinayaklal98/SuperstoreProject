@@ -27,6 +27,8 @@ def login():
 		print(msg)
 		if msg['username'] == 'test' and msg['password'] == 'test@123':
 			return jsonify({"GOT POST":"login successful!!"}),200
+		else:
+			return jsonify({"error":"Wrong Information"}),404
 	else:
 		return jsonify({"error":"Got Error"}),404
 
